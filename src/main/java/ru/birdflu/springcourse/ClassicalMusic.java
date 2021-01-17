@@ -1,5 +1,8 @@
 package ru.birdflu.springcourse;
 
+import org.springframework.stereotype.Component;
+
+@Component("musicBean")
 public class ClassicalMusic implements Music {
   private ClassicalMusic() { }
 

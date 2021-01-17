@@ -6,24 +6,27 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean" class="ru.birdflu.springcourse.ClassicalMusic">
+    <bean id="musicBean" class="ru.birdflu.springcourse.ClassicalMusic"
+    init-method="doMyInit"
+    destroy-method="doMyDestroy"
+    factory-method="getClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer" class="ru.birdflu.springcourse.MusicPlayer" scope="prototype">
+<!--    <bean id="musicPlayer" class="ru.birdflu.springcourse.MusicPlayer" scope="prototype">-->
 
-        <!--        <constructor-arg ref="musicBean"/>-->
+<!--        &lt;!&ndash;        <constructor-arg ref="musicBean"/>&ndash;&gt;-->
 
-        <!--        <property name="musicList">-->
-        <!--            <list>-->
-        <!--                <ref bean="musicBeanClassical"/>-->
-        <!--                <ref bean="musicBeanRock"/>-->
-        <!--                <ref bean="musicBeanJazz"/>-->
-        <!--            </list>-->
-        <!--        </property>-->
-        <!--        -->
-        <property name="music" ref="musicBean"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="50"/>
-    </bean>
+<!--        &lt;!&ndash;        <property name="musicList">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <list>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <ref bean="musicBeanClassical"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <ref bean="musicBeanRock"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <ref bean="musicBeanJazz"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </list>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </property>&ndash;&gt;-->
+<!--        &lt;!&ndash;        &ndash;&gt;-->
+<!--        <property name="music" ref="musicBean"/>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="50"/>-->
+<!--    </bean>-->
 
 </beans>

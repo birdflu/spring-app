@@ -9,8 +9,18 @@
     <bean id="musicBean" class="ru.birdflu.springcourse.ClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer" class="ru.birdflu.springcourse.MusicPlayer">
-<!--        <constructor-arg ref="musicBean"/>-->
+    <bean id="musicPlayer" class="ru.birdflu.springcourse.MusicPlayer" scope="prototype">
+
+        <!--        <constructor-arg ref="musicBean"/>-->
+
+        <!--        <property name="musicList">-->
+        <!--            <list>-->
+        <!--                <ref bean="musicBeanClassical"/>-->
+        <!--                <ref bean="musicBeanRock"/>-->
+        <!--                <ref bean="musicBeanJazz"/>-->
+        <!--            </list>-->
+        <!--        </property>-->
+        <!--        -->
         <property name="music" ref="musicBean"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="50"/>

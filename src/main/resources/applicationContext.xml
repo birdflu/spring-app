@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="testBean" class="ru.birdflu.springcourse.TestBean">
-        <constructor-arg value="Bird"/>
+    <bean id="musicBean" class="ru.birdflu.springcourse.RockMusic">
     </bean>
 </beans>

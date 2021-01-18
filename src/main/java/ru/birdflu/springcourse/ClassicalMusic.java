@@ -2,8 +2,13 @@ package ru.birdflu.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 @Component
 public class ClassicalMusic implements Music {
+  private List<String> songs = List.of("classicalSong1", "classicalSong2", "classicalSong3");
   private ClassicalMusic() { }
 
   public static ClassicalMusic getClassicalMusic() {
@@ -20,6 +25,7 @@ public class ClassicalMusic implements Music {
 
   @Override
   public String getSong() {
-    return "Hungarian Rhapsody";
+    //return "Hungarian Rhapsody";
+    return songs.get((new Random(new Date().getTime())).nextInt(3));
   }
 }

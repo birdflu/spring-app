@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-@Component
+//@Component
 public class RockMusic implements Music{
   private List<String> songs = List.of("rockSong1", "rockSong2", "rockSong3");
   @Override

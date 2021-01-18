@@ -1,11 +1,12 @@
 package ru.birdflu.springcourse;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
   public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-            "applicationContext.xml");
+//    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+//            "applicationContext.xml");
 
 //    Music music1 = context.getBean("musicBean", Music.class);
 //    MusicPlayer musicPlayer = new MusicPlayer(music1);
@@ -18,6 +19,9 @@ public class TestSpring {
 
 
 //    Computer computer = context.getBean("computer", Computer .class);
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+            SpringConfig.class);
+
     MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer .class);
     System.out.println(musicPlayer.getName());
     System.out.println(musicPlayer.getVolume());

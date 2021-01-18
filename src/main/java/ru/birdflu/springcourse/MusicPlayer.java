@@ -1,8 +1,10 @@
 package ru.birdflu.springcourse;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 //@Component
 public class MusicPlayer {
@@ -12,19 +14,17 @@ public class MusicPlayer {
   @Value("${musicPlayer.volume}")
   private int volume;
 
-  private Music music1;
-  private Music music2;
+  private List<Music> musicList;
 
-  public MusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
-    this.music1 = music1;
-    this.music2 = music2;
+  // public MusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
+
+
+  public MusicPlayer(List<Music> musicList) {
+    this.musicList = musicList;
   }
 
-  public String playMusic(MusicType musicType) {
-    if (musicType == MusicType.CLASSICAL)
-      return "Playing " + music2.getSong();
-    else
-      return "Playing " + music1.getSong();
+  public String playMusic() {
+    return musicList.get((new Random(new Date().getTime())).nextInt(3)).getSong();
   }
 
   public String getName() {
